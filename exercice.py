@@ -3,23 +3,42 @@
 
 
 def is_even_len(string: str) -> bool:
-    return False
+    even=False
+    if len(string)%2==0:
+        even=True
+    return even
 
 
 def remove_third_char(string: str) -> str:
-    return ""
+    la_string=[]
+    for i in string:
+        la_string.append(i)
+    del la_string[2]
+    string=""
+    for i in range(len(la_string)):
+        string+=la_string[i]
+    return string
 
 
 def replace_char(string: str, old_char: str, new_char: str) -> str:
-    return ""
-
+    answer=string.replace(old_char,new_char)
+    return answer
+    
 
 def get_nb_char(string: str, char: str) -> int:
-    return 0
+    total=0
+    for character in string:
+        if character== char:
+            total+=1
+    return total
 
 
 def get_nb_words(sentence: str) -> int:
-    return 0
+    total=0
+    for char in sentence:
+        if char== " ":
+            total+=1
+    return total+1
 
 
 def main() -> None:
